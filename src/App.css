@@ -1,0 +1,57 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+/* App layout */
+.app-layout {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.vertical-menu {
+  width: 200px;
+}
+.vertical-menu a {
+  background-color: #f8f9fa;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+/* App layout */
+
+/* Notes App */
+.note {
+  margin: 5px 5px;
+}
+.deltebutton {
+  border-radius: 80%;
+}
+.notes-form {
+  margin: 30px 5px;
+}
+/* Notes App */
+
+/* Image Gallery App */
+.image-gallery {
+  margin: 30px;
+}
+.input-spinner {
+  width: 15%;
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image-container > div {
+  margin: 10px;
+}
+.display-image {
+  height: 150px;
+  width: 200px;
+}
+/* Image Gallery App */
