@@ -1,7 +1,8 @@
 import React from 'react';
 import Form from './NotesForm';
 import Note from './Note';
-
+import { connect } from 'react-redux';
+import { getTodo } from './reducers/actions.js';
 class NotesApp extends React.Component {
 
   constructor() {
@@ -41,5 +42,13 @@ class NotesApp extends React.Component {
     );
   }
 }
-
-export default NotesApp;
+const mapDispatchToProps = { getTodo };
+const mapStateToProps = (state) => {
+  return {
+    notes: state.notes
+  }
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NotesApp);

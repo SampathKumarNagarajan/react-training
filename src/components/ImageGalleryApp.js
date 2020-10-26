@@ -9,22 +9,23 @@ const ImageGalleryApp = () => {
     const getCount = (count) => {
         setImageCount(count)
     }
-
-    useEffect(() => {
-        if(imageCount > 0) {
-            fetch('https://picsum.photos/v2/list/?limit='+imageCount)
-                .then(response => response.json())
-                .then(data => setImages(data));
+    
+    const getImages = () => {
+        let items = [];
+        for(let i=0; i<imageCount; i++){
+            items.push('https://picsum.photos/id/'+i+'/237/200')
+            
         }
-    },[imageCount]);
-        
+        return items;
+    }
+
     return (
         <div className="image-gallery">
             <InputSpinner getCount = {getCount}/>
             <div className="image-container">
                 {
-                    images.map((image) => (
-                            <div><img className="display-image" src={image.download_url}/></div>
+                    getImages().map((url) => (
+                            <div><img className="display-image" src={url}/></div>
                     ))
                 }
                 
