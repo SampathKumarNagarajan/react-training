@@ -2,39 +2,33 @@ import React from 'react';
 import Form from './NotesForm';
 import Note from './Note';
 import { connect } from 'react-redux';
-import { getTodo } from './reducers/actions.js';
+import { getTodo, addTodo, deleteTodo } from '../redux/actions/NoteActions.js';
 class NotesApp extends React.Component {
 
   constructor() {
     super();
-    this.state = {
-      notes: [],
-    }
     this.addNote = this.addNote.bind(this);
     this.deleteNote = this.deleteNote.bind(this);
     this.headerTitle = 'React Notes';
   }
 
+  componentDidMount() {
+    this.props.getTodo();
+  }
+
   addNote = (note) => {
-    this.setState({
-      notes: [...this.state.notes, note]
-    })
+    this.props.addTodo(note);
   }
 
   deleteNote = (noteToDelete) => {
-    let updatedList = this.state.notes.filter( (note)=> {
-      return note !== noteToDelete
-    })
-    this.setState({
-      notes: updatedList
-    })
+    this.props.deleteTodo(noteToDelete)
   }
 
   render() {
     return (
       <div>
         <Form addNote={this.addNote}/>
-        {(this.state.notes.length > 0) ? this.state.notes.map((note)=>(
+        {(this.props.notes.length > 0) ? this.props.notes.map((note)=>(
                 <Note title={note} deleteNote={this.deleteNote}/>
         )) : 'No notes found'
         }
@@ -42,13 +36,14 @@ class NotesApp extends React.Component {
     );
   }
 }
-const mapDispatchToProps = { getTodo };
+const mapDispatchToProps = { getTodo, addTodo, deleteTodo };
 const mapStateToProps = (state) => {
   return {
-    notes: state.notes
+    notes: state.Notes.notes
   }
 }
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(NotesApp);
+

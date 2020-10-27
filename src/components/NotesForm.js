@@ -1,7 +1,4 @@
 import React, {useState} from 'react';
-import { connect } from 'react-redux';
-import { addTodo } from '../redux/actions';
-
 
 const NotesForm = (props) => {
     
@@ -33,7 +30,4 @@ const NotesForm = (props) => {
     )
 }
 
-export default connect(
-    null,
-    { addTodo }
-)(NotesForm);
+export default NotesForm;
