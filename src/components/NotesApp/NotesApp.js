@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './NotesForm';
 import Note from './Note';
 import { connect } from 'react-redux';
-import { getTodo, addTodo, deleteTodo } from '../redux/actions/NoteActions.js';
+import { getTodo, addTodo, deleteTodo } from '../../redux/actions/NoteActions.js';
 class NotesApp extends React.Component {
 
   constructor() {

@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React,{useState} from 'react';
 import InputSpinner from './InputSpinner';
 
 const ImageGalleryApp = () => {
 
-    const [images, setImages] = useState([]);
     const [imageCount, setImageCount] = useState(1);
 
     const getCount = (count) => {
