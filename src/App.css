@@ -80,7 +80,8 @@ body {
   text-align: center;
   /* font-size: 30px; */
 }
-.item7 {
+.paginator {
   grid-column: 1 / 4;
+  grid-row: 3 ;
 }
 /* User profile app */

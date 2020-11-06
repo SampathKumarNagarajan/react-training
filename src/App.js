@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import NotesApp from './components/NotesApp/NotesApp';
 import ImageGalleryApp from './components/ImageGalleryApp/ImageGalleryApp';
 import UserProfileApp from './components/UserProfileApp/UserProfileApp';
+import MusicPlayerApp from './components/MusicPlayerApp/MusicPlayerApp';
 
 class App extends React.Component {
 
@@ -22,7 +23,8 @@ class App extends React.Component {
                 <div className="vertical-menu">
                     <Link to="/">React Notes</Link>
                     <Link to="/gallery">React Image Gallery</Link>
-                    <Link to="/user">User Profile</Link>
+                    <Link to="/user">React User Profile</Link>
+                    <Link to="/music_player">React Music player</Link>
                 </div>
             </div>
             <div className="item">
@@ -31,6 +33,7 @@ class App extends React.Component {
                   <Route exact path='/' component={NotesApp}/>
                   <Route exact path='/gallery' component={ImageGalleryApp}/>
                   <Route exact path='/user' component={UserProfileApp}/>
+                  <Route exact path='/music_player' component={MusicPlayerApp}/>
                 </Switch>
               </div>
             </div>

@@ -7,9 +7,11 @@ export const getUsers = (users) => {
     }
 }
 
-export const fetchUsers = () => {
-    return dispatch => {
-        fetch('https://reqres.in/api/users?page=1')
+export const fetchUsers = (page) => {
+   
+    console.log(`https://5fa3e015f10026001618e16c.mockapi.io/api/users?${page}`)
+    return (dispatch) => {
+        fetch(`https://5fa3e015f10026001618e16c.mockapi.io/api/users?page=${page}&limit=6`)
         .then(res => res.json())
         .then(res => {
             dispatch(getUsers(res))
