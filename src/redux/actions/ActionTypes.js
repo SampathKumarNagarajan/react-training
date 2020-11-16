@@ -1,6 +1,15 @@
 export const ADD_TODO = 'ADD_TODO';
 export const GET_TODO = 'GET_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
+
 export const GET_USERS = 'GET_USERS';
 export const SET_ACTIVE_PAGE = 'SET_ACTIVE_PAGE';
 export const GET_ACTIVE_PAGE = 'GET_ACTIVE_PAGE';
+
+export const GET_CURRENT_AUDIO = 'GET_CURRENT_AUDIO';
+export const INC_CURRENT_AUDIO_INDEX = 'SET_CURRENT_AUDIO_INDEX';
+export const DEC_CURRENT_AUDIO_INDEX = 'DEC_CURRENT_AUDIO_INDEX';
+export const PLAY_AUDIO = 'PLAY_AUDIO';
+export const PAUSE_AUDIO = 'PAUSE_AUDIO';
+export const LOAD_AUDIO = 'LOAD_AUDIO';
+export const UPDATE_AUDIO_STATUS = 'UPDATE_AUDIO_STATUS';
